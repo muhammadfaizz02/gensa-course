@@ -1,0 +1,272 @@
+/* Gensa Course Custom Styles */
+
+/* ===== Base ===== */
+:root {
+    --gensa-primary: #fbb117;
+    --gensa-primary-dark: #e8a014;
+    --gensa-secondary: #2d3748;
+    --gensa-light: #fef9e7;
+    --gensa-dark: #1a202c;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+/* ===== Gradient & warna ===== */
+/* Hanya satu definisi (yang dipakai sebelumnya adalah yang kedua) */
+.gensa-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+.gensa-gradient-light {
+    background: linear-gradient(135deg, #fcc548 0%, #f9b836 100%);
+}
+.gensa-gradient-dark {
+    background: linear-gradient(135deg, #e8a014 0%, #d89112 100%);
+}
+
+/* Dipakai di sidebar (ikon logo), sebelumnya belum didefinisikan */
+.gensa-text { color: var(--gensa-primary); }
+.gensa-text-primary { color: var(--gensa-primary); }
+.gensa-bg-primary { background-color: var(--gensa-primary); }
+.gensa-border-primary { border-color: var(--gensa-primary); }
+
+/* ===== Buttons ===== */
+.btn-gensa {
+    background-color: var(--gensa-primary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-gensa:active { transform: translateY(0); }
+
+.btn-gensa-outline {
+    background-color: transparent;
+    color: var(--gensa-primary);
+    border: 2px solid var(--gensa-primary);
+}
+.btn-gensa-outline:hover {
+    background-color: var(--gensa-primary);
+    color: white;
+}
+
+/* ===== Inputs ===== */
+.input-gensa {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    max-width: 100%;
+}
+.input-gensa:focus {
+    border-color: var(--gensa-primary);
+    box-shadow: 0 0 0 3px rgba(251, 177, 23, 0.2);
+    outline: none;
+}
+.form-select:focus {
+    border-color: var(--gensa-primary);
+    box-shadow: 0 0 0 3px rgba(251, 177, 23, 0.2);
+}
+
+/* accent-color lebih andal daripada background-color pada checkbox/radio */
+input[type="checkbox"],
+input[type="radio"] { accent-color: var(--gensa-primary); }
+
+/* ===== Cards ===== */
+.gensa-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== Hover efek: hanya untuk perangkat dengan mouse ===== */
+@media (hover: hover) {
+    .gensa-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .btn-gensa:hover {
+        background-color: var(--gensa-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(251, 177, 23, 0.3);
+    }
+    .hover-lift:hover { transform: translateY(-4px); }
+}
+.hover-lift { transition: transform 0.3s ease; }
+
+/* ===== Badges ===== */
+.gensa-badge {
+    background-color: var(--gensa-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.gensa-badge-outline {
+    background-color: transparent;
+    color: var(--gensa-primary);
+    border: 1px solid var(--gensa-primary);
+}
+
+/* ===== Navigation ===== */
+.sidebar-active { background-color: rgba(255, 255, 255, 0.2); }
+
+.gensa-nav-link {
+    color: var(--gensa-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+.gensa-nav-link:hover {
+    background-color: rgba(251, 177, 23, 0.1);
+    color: var(--gensa-primary);
+}
+.gensa-nav-link.active {
+    background-color: var(--gensa-primary);
+    color: white;
+}
+
+/* ===== Tables =====
+   Bungkus tabel dengan <div class="overflow-x-auto"> untuk scroll di HP */
+.gensa-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.gensa-table th {
+    background-color: #f7fafc;
+    color: var(--gensa-secondary);
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+.gensa-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+.gensa-table tr:hover td { background-color: #fef9e7; }
+
+/* ===== Alerts ===== */
+.gensa-alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid;
+}
+.gensa-alert-success { background-color: #f0fff4; border-color: #48bb78; color: #276749; }
+.gensa-alert-warning { background-color: #fffaf0; border-color: #ed8936; color: #c05621; }
+.gensa-alert-error   { background-color: #fff5f5; border-color: #fc8181; color: #c53030; }
+.gensa-alert-info    { background-color: #ebf8ff; border-color: #4299e1; color: #2c5282; }
+
+/* ===== Progress ===== */
+.gensa-progress {
+    height: 0.5rem;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+.gensa-progress-bar {
+    height: 100%;
+    background-color: var(--gensa-primary);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--gensa-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gensa-primary-dark); }
+
+/* ===== Animations ===== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.fade-in { animation: fadeIn 0.3s ease-in; }
+.slide-in-up { animation: slideInUp 0.3s ease-out; }
+
+.gensa-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--gensa-primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+/* ===== Modal ===== */
+.modal-backdrop { background-color: rgba(0, 0, 0, 0.5); }
+
+/* ===== Status ===== */
+.status-approved,
+.status-completed { color: #38a169; background-color: #c6f6d5; }
+.status-pending   { color: #d69e2e; background-color: #feebc8; }
+.status-rejected,
+.status-cancelled { color: #e53e3e; background-color: #fed7d7; }
+.status-scheduled { color: #3182ce; background-color: #bee3f8; }
+
+/* ===== Utility ===== */
+.gensa-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+
+.focus-gensa:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--gensa-primary);
+}
+
+/* ===== File upload ===== */
+.file-upload-gensa input[type="file"] { display: none; }
+.file-upload-gensa label {
+    background-color: var(--gensa-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+.file-upload-gensa label:hover { background-color: var(--gensa-primary-dark); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .gensa-card { border-radius: 0.5rem; }
+
+    .gensa-table th,
+    .gensa-table td {
+        padding: 0.75rem;
+        white-space: nowrap;
+    }
+
+    /* Cegah iOS Safari zoom otomatis saat input difokuskan */
+    input, select, textarea { font-size: 16px; }
+
+    .input-gensa { padding: 0.625rem 0.875rem; }
+    .btn-gensa { padding: 0.625rem 1.25rem; }
+}
+
+/* ===== Print ===== */
+@media print {
+    .no-print { display: none !important; }
+
+    /* Sidebar fixed tidak ikut tercetak, konten tidak lagi digeser */
+    .lg\:ml-64 { margin-left: 0 !important; }
+
+    body { font-size: 12px; line-height: 1.4; }
+    .break-before { page-break-before: always; }
+    .break-after { page-break-after: always; }
+    .break-inside-avoid { page-break-inside: avoid; }
+}
